@@ -54,8 +54,9 @@ h2{font-size:clamp(1.7rem,4vw,2.3rem);margin-bottom:28px}
 .facts b{display:block;font-size:.85rem;color:var(--muted);font-weight:500}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s}
 .card:hover{transform:translateY(-5px);border-color:var(--a);box-shadow:0 14px 40px rgba(124,58,237,.22)}
-.shot{height:150px;background:linear-gradient(135deg,#2a1752,#5b21b6 55%,#c026d3);display:grid;place-items:center;position:relative}
+.shot{height:200px;overflow:hidden;background:linear-gradient(135deg,#2a1752,#5b21b6 55%,#c026d3);display:grid;place-items:center;position:relative}
 .shot::before{content:"";position:absolute;top:12px;left:14px;width:9px;height:9px;border-radius:50%;background:#ffffff66;box-shadow:16px 0 #ffffff44,32px 0 #ffffff33}
+.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top}
 .shot span{font:700 1.5rem Sora,sans-serif;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.35);padding:0 16px;text-align:center}
 .body{padding:22px}
 .body h3{font-size:1.25rem;margin-bottom:8px}
@@ -63,8 +64,10 @@ h2{font-size:clamp(1.7rem,4vw,2.3rem);margin-bottom:28px}
 .tags{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;padding:0;list-style:none}
 .tags li{padding:4px 12px;border-radius:99px;font-size:.82rem;background:#251a3d;border:1px solid var(--line);color:#d9c9ff;transition:border-color .2s,transform .2s}
 .tags li:hover{border-color:var(--a3);transform:translateY(-2px)}
-.feat{display:grid;grid-template-columns:1fr 1.2fr;margin-bottom:24px}
-.feat .shot{height:100%;min-height:240px}
+.feat{display:grid;grid-template-columns:1fr;margin-bottom:24px}
+.feat .shot{display:block;height:auto;min-height:200px}
+.feat .shot span{position:absolute;inset:0;display:grid;place-items:center}
+.feat .shot img{position:relative;inset:auto;display:block;width:100%;height:auto;object-fit:contain}
 .feat ul.f{margin:0 0 14px;padding-left:20px;color:#cfc7e3}
 .feat ul.f li{margin-bottom:4px}
 .badge{display:inline-block;margin-bottom:10px;padding:3px 12px;border-radius:99px;background:linear-gradient(90deg,var(--a2),var(--a3));font-size:.82rem;font-weight:500;color:#fff}
@@ -89,7 +92,7 @@ nav ul{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:col
 nav ul.open{display:flex}nav li a{display:block;padding:11px 0}
 .hero-grid,.about,.feat,.grid2{grid-template-columns:1fr}
 .avatar{order:-1;width:190px;height:250px}.orb{width:300px;height:300px;right:-100px}
-.feat .shot{min-height:150px}}
+.feat .shot{min-height:200px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.reveal,.enter>*{opacity:1;transform:none}html{scroll-behavior:auto}}
 </style>
 </head>
@@ -127,7 +130,7 @@ nav ul.open{display:flex}nav li a{display:block;padding:11px 0}
 <h2 class="reveal">Projects</h2>
 
 <article class="card feat reveal">
-<div class="shot"><span>AI-Powered Evangadi Forum</span></div>
+<div class="shot"><span>AI-Powered Evangadi Forum</span><img src="forum.jpg" alt="Screenshot of the AI-Powered Evangadi Forum" loading="lazy" onerror="this.remove()"></div>
 <div class="body">
 <span class="badge">Featured project</span>
 <h3>AI-Powered Evangadi Forum</h3>
@@ -147,7 +150,7 @@ nav ul.open{display:flex}nav li a{display:block;padding:11px 0}
 
 <div class="grid2">
 <article class="card reveal">
-<div class="shot"><span>ChatGPT Clone</span></div>
+<div class="shot"><span>ChatGPT Clone</span><img src="chatgpt.jpg" alt="Screenshot of the ChatGPT Clone" loading="lazy" onerror="this.remove()"></div>
 <div class="body">
 <h3>ChatGPT Clone</h3>
 <p>A ChatGPT-inspired chat app built to learn how AI chat interfaces work. You send a message, get an AI answer, and the conversation is saved in a database. I’m proud of the conversational interface and of learning how the front end, back end, and AI connect.</p>
@@ -157,7 +160,7 @@ nav ul.open{display:flex}nav li a{display:block;padding:11px 0}
 </div></article>
 
 <article class="card reveal">
-<div class="shot"><span>Netflix Clone</span></div>
+<div class="shot"><span>Netflix Clone</span><img src="netflix.jpg" alt="Screenshot of the Netflix Clone" loading="lazy" onerror="this.remove()"></div>
 <div class="body">
 <h3>Netflix Clone</h3>
 <p>A Netflix-inspired movie site that loads real movie data from the TMDB API. I built it to practise creating an attractive interface and organising movie content, and it improved my front-end skills.</p>
